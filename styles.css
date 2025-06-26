@@ -1,0 +1,295 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #87CEEB;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.spongebob-title {
+    color: #FFFF00;
+    text-shadow: 
+        3px 3px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    animation: bounce 2s infinite alternate;
+}
+
+.spongebob-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0,0,0,0.1) 1.5px, transparent 2px),
+        radial-gradient(circle at 30% 50%, rgba(0,0,0,0.1) 2px, transparent 2px),
+        radial-gradient(circle at 70% 30%, rgba(0,0,0,0.1) 1.5px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(0,0,0,0.1) 2px, transparent 2px);
+    pointer-events: none;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-15px); }
+}
+
+.spongebob {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+/* Body */
+.body {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: #ffff00;
+    border-radius: 15px;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    box-shadow: inset 0 0 0 10px #ffff00,
+                inset 0 0 0 12px #000,
+                inset 0 0 0 22px #ffff00,
+                inset 0 0 0 24px #000;
+}
+
+/* Pores */
+.pore {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+}
+
+/* Eyes */
+.eyes {
+    position: absolute;
+    width: 180px;
+    height: 80px;
+    top: 60px;
+    left: 60px;
+    z-index: 2;
+}
+
+.eye {
+    position: absolute;
+    width: 70px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #000;
+}
+
+.eye.left { left: 0; }
+.eye.right { right: 0; }
+
+.iris {
+    position: absolute;
+    width: 30px;
+    height: 35px;
+    background: #00bfff;
+    border-radius: 50%;
+    border: 3px solid #000;
+    top: 20px;
+    left: 20px;
+}
+
+.pupil {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    top: 8px;
+    left: 8px;
+}
+
+.eyelash {
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: #000;
+    top: -15px;
+}
+
+/* Nose */
+.nose {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background: #ffff00;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border: 3px solid #000;
+    top: 130px;
+    left: 135px;
+    z-index: 3;
+}
+
+/* Mouth */
+.mouth {
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    border: 3px solid #000;
+    border-radius: 0 0 50% 50%;
+    top: 160px;
+    left: 75px;
+    z-index: 2;
+    background: #ffff00;
+    overflow: hidden;
+}
+
+.teeth {
+    position: absolute;
+    width: 140px;
+    height: 30px;
+    background: white;
+    border: 3px solid #000;
+    top: 0;
+    left: 5px;
+}
+
+.tongue {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background: #ff6b6b;
+    border: 3px solid #000;
+    border-radius: 20px;
+    bottom: 5px;
+    left: 45px;
+}
+
+/* Cheeks */
+.cheek {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background: #ff9999;
+    border-radius: 50%;
+    top: 180px;
+    z-index: 1;
+}
+
+.cheek.left { left: 60px; }
+.cheek.right { right: 60px; }
+
+/* Arms */
+.arm {
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    background: #ffff00;
+    border: 3px solid #000;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.arm.left {
+    left: 20px;
+    top: 180px;
+    transform: rotate(20deg);
+}
+
+.arm.right {
+    right: 20px;
+    top: 180px;
+    transform: rotate(-20deg);
+}
+
+/* Sleeves */
+.sleeve {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background: white;
+    border: 3px solid #000;
+    border-radius: 15px;
+    top: -3px;
+    left: -5px;
+}
+
+/* Pants */
+.pants {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background: #966F33;
+    border: 3px solid #000;
+    border-radius: 0 0 15px 15px;
+    bottom: 50px;
+    left: 50px;
+    z-index: 2;
+}
+
+.belt {
+    position: absolute;
+    width: 200px;
+    height: 15px;
+    background: #000;
+    top: -3px;
+    left: 0;
+}
+
+/* Legs */
+.leg {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: #ffff00;
+    border: 3px solid #000;
+    border-radius: 0 0 15px 15px;
+    bottom: 0;
+    z-index: 1;
+}
+
+.leg.left { left: 80px; }
+.leg.right { right: 80px; }
+
+/* Shoes */
+.shoe {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background: #000;
+    border-radius: 0 0 15px 15px;
+    bottom: -20px;
+    left: -5px;
+}
+
+/* Tie */
+.tie {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: #ff0000;
+    border: 3px solid #000;
+    border-radius: 10px;
+    top: 250px;
+    left: 130px;
+    z-index: 3;
+}
+
+.tie-knot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff0000;
+    border: 3px solid #000;
+    border-radius: 50%;
+    top: -10px;
+    left: 10px;
+}
